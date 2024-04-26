@@ -1,0 +1,634 @@
+1)l=[1,1,1,2,2,3,4]
+s=set(l)
+print(s)
+output:
+{1, 2, 3, 4}
+
+ 
+2)l=[1,1,1,2,2,3,4]
+room=[]
+for i in l:
+    if i not in room:
+        room.append(i)
+print(room) 
+output:       
+[1, 2, 3, 4]
+
+3)s="aaabbbcccd"
+room=""
+for i in s:
+    if i not in room:
+        room=room+i
+print(room)    
+output:
+abcd
+
+4)//remove duplcate from set
+
+s="google"
+p=set(s)
+for i in p:
+    c=0
+    for j in s:
+        if i==j:
+            c+=1
+    print(i,"-",c)   
+output:
+e - 1
+o - 2
+l - 1
+g - 2
+
+5)//remove duplicate from list
+l=[1,1,2,5,6,7]
+p=set(l)
+for i in p:
+    c=0
+    for j in l:
+        if i==j:
+            c+=1
+    print(i,"-",c)      
+output:
+1 - 2
+2 - 1
+5 - 1
+6 - 1
+7 - 1
+
+6)//sum of even and odd numbers
+l=[1,1,2,5,6,7]
+even=0
+odd=0
+for i in l:
+    if i%2==0:
+        even=even+i
+    else:
+        odd=odd+i
+print("even=",even)
+print("odd=",odd) 
+output:
+even= 8
+odd= 14
+
+7)//common numbers in the lists
+l1=[1,2,3,4]
+l2=[4,5,6,7]
+l=[]
+for i in l1:
+    if i in l2:
+        l.append(i)
+print(l)     
+output:
+[4]
+
+8)//not common numbers in a list
+l1=[1,2,3,4]
+l2=[4,5,6,7]
+l=[]
+for i in l1:
+    if i not in l2:
+        l.append(i)
+print(l)        
+for i in l2:
+    if i not in l1:
+        l.append(i)
+print(l)        
+output:
+[1, 2, 3, 5, 6, 7]
+
+9)//prime number in given range
+def isprime(x):
+    for i in range(2,x//2):
+        if x%i==0:
+            return 0
+    else:
+        return 1    
+l=int(input())
+u=int(input())
+for i in range(l,u+1):
+    a=isprime(i)
+    if a==1:
+        print(i)
+output:
+4
+30
+4
+5
+7
+11
+13
+17
+19
+23
+29
+ 
+10)//convert the number from decimal to binary
+
+n=int(input())
+s=""
+while n>0:
+    rem=n%2
+    s=s+str(rem)
+    n=n//2
+print(s[::-1])
+output:
+4
+100
+
+11)//check if number is perfect square
+n=int(input())
+i=1
+while i**2<n:
+    i+=1
+if i**2==n:
+    print("perfect square")
+else:
+    print("not perfect square")        
+output:
+25
+perfect square
+3
+not perfect square
+
+12)//check whether number is pow of 2
+n=int(input())
+i=1
+while 2**i<n:
+    i+=1
+if 2**i==n:
+    print("pow of 2")
+else:
+    print("not pow of 2")        
+output:
+4
+pow of 2
+25
+not pow of 2 
+
+13)//check whether number is armstong or not
+n=int(input())
+a=0
+t=n
+d=len(str(n))
+while t>0:
+    rem=t%10
+    a=a+(rem**d)
+    t=t//10
+if a==n:
+    print("armstrong")
+else:
+    print("not armstrong")
+output:
+372
+not armstrong
+
+14)//check if number is perfect number
+n=int(input())
+x=0
+i=1
+for i in range(1,n):
+    if n%i==0:
+        x=x+i
+if x==n:
+    print("perfect number")
+else:
+    print("not perfect squre")
+output:
+6
+perfect number
+
+15)//check if a number is abundent number
+n=int(input())
+x=1
+for i in range(2,n):
+    if n%i==0:
+        x=x+i
+if x>n:
+    print("abundant number")
+else:
+    print("not abundant number")
+output
+12
+abundant number
+
+//slicing using string
+s="abcderfghijk"
+print(s[20:-10:-2])
+output:
+kigrd
+
+//finding even and odd numbers in a string 
+a=[1,2,3,4,5,6,7,8,9,10]
+even=a[1::2]
+odd=a[-2::-2]
+l=[]
+l.extend(even)
+l.extend(odd)
+print(l)
+output:
+[2, 4, 6, 8, 10, 9, 7, 5, 3, 1]
+
+//rotation of a number
+a=[1,2,3,4,5,6,7,8,9,10]
+n=2
+print(a[-n::]+a[0:-n])
+outpit:
+[9, 10, 1, 2, 3, 4, 5, 6, 7, 8]
+
+example:
+n=int(input())
+a=[1,2,3,4,5,6,7,8,9,10]
+if n>len(a):
+    n=n%len(a)
+print(a[-n::]+a[0:-n])
+output:
+[9, 10, 1, 2, 3, 4, 5, 6, 7, 8]
+
+example:
+a=[1,2,3,4,5]
+n=3
+print(a[n::]+a[0:n])
+output:
+[4, 5, 1, 2, 3]
+
+//check whether phone number is valid
+s="12a4"
+print(s.isdigit())
+output:
+False
+
+n=str(input())
+if(len(n))==10:
+    if n[0]=='6' or n[0]=='7'or n[0]=='8' or n[0]=='9':
+      if n.isdigit("valid"):
+        print("valid")
+        exit
+    else:
+       print("invalid")
+else:
+   print("invalid")       
+output:
+9
+invalid
+
+reverse a sentence
+s="hey how are you"
+l=list(s.split(" "))
+l=l[::-1]
+ans=" ".join(l)
+print(ans)
+output:
+you are how hey
+ 
+s="hey how are you"
+l=list(s.split(" "))
+s=""
+for i in l:
+    s=s+i[::-1]+" "
+print(s)    
+output:
+yeh woh era uoy 
+
+//check whether paliandrome is valid or not
+s="madam"
+s1=s.upper()
+if s1==s1[::-1]:
+    print("palindrome")
+else:
+    print("not palindrome")    
+    output:
+palindrome
+
+//check whther word is anagram or not
+a=input()
+b=input()
+s=set(a)
+s2=set(b)
+if s==s2:
+   for i in s:
+     if a.count(i)!=b.count(i):
+        print("not anagram")
+        break
+   else:
+      print("anagram")   
+output:
+god
+dog
+anagram
+
+//factorial of number using recursion
+def fact(x):
+    if x==1:
+        return x
+    return x*fact(x-1)
+n=int(input())
+a=fact(n)
+print(a)
+output:
+4
+24
+
+//increment using recursion
+def fact(a,x):
+    if a==x:
+        return x
+    return a*fact(a+1,x)
+n=int(input())
+a=fact(1,n)
+print(a)
+output:
+4
+24
+
+//fibonacci using recurssion
+def fib(x):
+    if x<=1:
+        return x
+    return fib(x-1)+fib(x-2)
+n=int(input())
+a=fib(n)
+print(a)
+output:
+4
+3
+
+//reverse a number using recurssion
+def rev(n,x):
+    if n<=0:
+        return x
+    else:
+        return rev(n//10,x*10+n%10)
+n=int(input())
+a=rev(n,0)
+print(a)
+        
+    output:
+1234
+4321
+
+object oriented programming with python(oops)
+
+class is user-defined datatype, thus we can create class
+attributes-variables and functions
+example:
+class person:
+     nickname="chintu"
+     roll="45"
+     heighht="6"
+     def run(self):
+      print("i can run"+self.nickname+self.roll)
+harsha=person()
+anjali=person()
+harsha.run()
+anjali.run()
+
+output:
+i can runchintu45
+i can runchintu45
+
+class person:
+     def __init__(self,x,y,z):
+        self.nickname=x
+        self.roll=y
+        self.height=z
+     def run(self):
+         print("i can run",self.nickname, self.roll)
+harsha=person("chintu",78,6)
+anjali=person("mary",89,5)
+harsha.run()
+anjali.run() 
+output:
+i can run chintu 78
+i can run mary 89
+
+abstraction::
+adstract method is which does not has no body
+abstract class is a class which has body
+
+complete abstraction example:
+class mobile:
+    def functions(self):
+        pass
+class iphone:
+    def functions(self):
+        print("hey i am iphone")
+class samsung(mobile):
+    def functions(self):
+        print("hey i am samsung")
+iphone13=iphone()
+iphone13.functions()
+samsungs3=samsung()
+samsungs3.functions()        
+output:
+hey i am iphone
+hey i am samsung
+
+encapsulation:
+when it is private cannot acces the class directly
+class car:
+    _engine="v8"
+    _wires="blue"
+    def getter(self):
+        print(self._engine)
+        print(self._wires)
+    def setter(self,engine,wires):
+        self._engine=engine
+        self._wires=wires
+bmw=car()
+bmw.setter("v9","red")
+bmw.getter()    
+output:
+v9
+red
+
+inheritance
+class parents:
+    def coolness(self):
+        print("parents are cool")
+class child(parents):
+    def coding(self):
+        print("i know coding")
+rahul=child()
+rahul.coolness()
+rahul.codin
+output():
+parents are cool
+i know coding
+
+//multilevel inheritance
+class parents:
+    def coolness(self):
+        print("parents are cool")
+class child(parents):
+    def coding(self):
+        print("i know coding")
+class child2(child):
+    def singing(self):
+        print("i can sing")
+rahul=child2()
+rahul.coolness()
+rahul.coding()
+rahul.singing()
+
+        
+rahul=child()
+rahul.coolness()
+rahul.coding()
+output:
+parents are cool
+i know coding
+i can sing
+parents are cool
+i know coding
+
+//multiple inhertance
+class dad:
+    def coolness(self):
+        print("parents are cool")
+class mom:
+    def coding(self):
+        print("i know coding")
+class child2(mom,dad):
+    def singing(self):
+        print("i can sing")
+rahul=child2()
+rahul.coolness()
+rahul.coding()
+rahul.singing()
+output:
+parents are cool
+i know coding
+i can sing
+
+//heririchal inheritance
+class parent:
+    def coolness(self):
+        print("parents are cool")
+class child1(parent):
+    def coding(self):
+        print("i know coding")
+class child2(parent):
+    def singing(self):
+        print("i can sing")
+anu=child1()
+anu.coolness()
+anu.coding()
+rahul=child2()
+rahul.singing()
+
+output:
+parents are cool
+i know coding
+i can sing
+
+//hybrid inheritance
+class parent:
+    def coolness(self):
+        print("parents are cool")
+class child1(parent):
+    def coding(self):
+        print("i know coding")
+class child2(parent):
+    def singing(self):
+        print("i can sing")
+class grandchild(child1,child2):
+    def dancing(self):
+        print("i can dance")
+anu=grandchild()        
+anu=child1()
+anu.coolness()
+anu.coding()
+rahul=child2()
+rahul.singing()
+
+output:
+parents are cool
+i know coding
+i can sing
+
+//quick sorting
+def partition(arr,low,high):
+    pivot=arr[low]
+    start=low+1
+    end=high
+    while True:
+        while start<=end and arr[start]<=pivot:
+            start+=1
+        while start<=end and arr[end]>pivot:
+            end-=1
+        if start<end:
+            arr[start],arr[end]=arr[end],arr[start]
+        else:
+            break
+    arr[low],arr[end]=arr[end],arr[low]
+    return end
+def quicksort(arr,beg,end):
+    if beg<end:
+       p=partition(arr,beg,end)
+       quicksort(arr,beg,p-1)
+       quicksort(arr,p+1,end)
+a=[8,7,6,1,4,5,2,3]
+b=0
+e=len(a)-1
+quicksort(a,b,e)
+print(a)            
+output:
+[1, 2, 3, 4, 5, 6, 7, 8]
+
+//implementation of stack using python
+
+class stack:
+    def __init__(self):
+        self.top=-1
+        self.size=5
+        self.list=[]
+    def push(self,data):
+        if len(self.list)==5:
+            print("full")
+            return 0
+        self.top+=1
+        self.list.append(data)
+    def pop(self):
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        self.top-=1
+        self.list.pop()
+    def peek(self):
+        print(self.list)
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        elif self.top>5:
+            print("out of index")
+        else:
+            print(self.list[self.top])
+
+s=stack()
+s.push(1)
+s.push(2)
+s.push(3)
+s.push(4)
+s.push(5)
+s.pop()
+s.push(6)
+s.peek()                        
+
+output:
+[1, 2, 3, 4, 6]
+6
+
+//postfix
+
+l="5678+-*"
+a=[]
+for i in l:
+if i.isdigit():
+a.append(int(i))
+
+        
+
+        
+
+
+
